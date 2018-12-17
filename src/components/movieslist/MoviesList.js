@@ -15,6 +15,7 @@ export class MoviesList extends Component {
           return (
             <li className="movies-list-item" key={movie.imdbID}>
               <MovieCard
+                id={movie.imdbID}
                 title={movie.Title}
                 poster={movie.Poster}
                 year={movie.Year}
