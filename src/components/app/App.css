@@ -1,0 +1,28 @@
+.App {
+  padding-top: 36px;
+  text-align: center;
+}
+
+.searchform-wrapper {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+.movies-list {
+  display: grid;
+  grid-gap: 30px;
+  margin: 50px auto 50px;
+	padding: 0 30px;
+	max-width: 950px;
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+	.movies-list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media all and (min-width: 768px) {
+	.movies-list {
+		grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
