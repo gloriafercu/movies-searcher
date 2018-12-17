@@ -1,3 +1,14 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 96%);
+}
+
+#root {
+  flex: 1;
+}
+
 .App {
   padding-top: 36px;
   text-align: center;
@@ -8,21 +19,45 @@
   display: flex;
   justify-content: center;
 }
+
 .movies-list {
   display: grid;
   grid-gap: 30px;
   margin: 50px auto 50px;
-	padding: 0 30px;
-	max-width: 950px;
+  padding: 0 30px;
+  max-width: 950px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.modal-card-body {
+  display: flex;
+  align-items: center;
+}
+
+.image .image-details {
+  width: 200px;
+}
+
+.icon.is-small {
+  display: inline;
+}
+.svg-inline--fa {
+  margin: 10px 10px 0 0;
 }
 
 @media (min-width: 560px) and (max-width: 767px) {
-	.movies-list {
-		grid-template-columns: 1fr 1fr;
-	}
+  .movies-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 @media all and (min-width: 768px) {
-	.movies-list {
-		grid-template-columns: 1fr 1fr 1fr ;
+  .movies-list {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { MovieCard } from '../moviecard/MovieCard';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { MovieCard } from "../moviecard/MovieCard";
 
 export class MoviesList extends Component {
   static propTypes = {
     movies: PropTypes.array
-  }
+  };
 
   render() {
     const { movies } = this.props;
@@ -22,8 +22,7 @@ export class MoviesList extends Component {
               />
             </li>
           );
-        })
-        }
+        })}
       </ul>
     );
   }

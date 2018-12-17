@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-const API_KEY = 'b78ef358';
+const API_KEY = "b78ef358";
 
 export class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputMovie: ''
-    }
+      inputMovie: ""
+    };
   }
 
-  _handleChange = (e) => {
+  _handleChange = e => {
     this.setState({
       inputMovie: e.target.value
     });
-  }
-  _handleSubmit = (e) => {
+  };
+  _handleSubmit = e => {
     e.preventDefault();
     const { inputMovie } = this.state;
 
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
       .then(response => response.json())
       .then(movies => {
         const { Search = [] } = movies;
         console.log({ Search });
         this.props.onResults(Search);
       });
-  }
+  };
 
   render() {
     return (
@@ -37,10 +37,11 @@ export class SearchForm extends Component {
               className="input"
               type="text"
               placeholder="Movie to search..."
-              onChange={this._handleChange} />
+              onChange={this._handleChange}
+            />
           </div>
           <div className="control">
-            <button className="button is-info">Search</button>
+            <button className="button is-danger">Search</button>
           </div>
         </div>
       </form>

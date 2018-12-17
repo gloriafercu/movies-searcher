@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Title } from '../components/title/Title';
-import { SearchForm } from '../components/searchform/SearchForm';
-import { MoviesList } from '../components/movieslist/MoviesList';
+import React, { Component } from "react";
+import { Title } from "../components/title/Title";
+import { SearchForm } from "../components/searchform/SearchForm";
+import { MoviesList } from "../components/movieslist/MoviesList";
 
 export class Home extends Component {
   constructor(props) {
@@ -9,21 +9,22 @@ export class Home extends Component {
     this.state = {
       movies: [],
       usedSearch: false
-    }
+    };
   }
 
-  _handleResults = (movies) => {
+  _handleResults = movies => {
     this.setState({
       movies,
       usedSearch: true
     });
-  }
+  };
 
   _renderMovies() {
     return this.state.movies.length === 0
-      ? <p>Sorry! <span role="img" aria-label="sheep">😟</span> Results  not found!</p>
+      ? <p>Sorry!<span role="img" aria-label="sad">😟</span>Results not found!</p>
       : <MoviesList movies={this.state.movies} />
   }
+
   render() {
     return (
       <div>
